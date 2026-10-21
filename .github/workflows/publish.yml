@@ -1,8 +1,8 @@
 name: Publish
 
-# Builds apps.json from the releases of each app and publishes it with GitHub
-# Pages. A new release shows in the source within six hours, or at once when
-# the workflow runs by hand.
+# Builds apps.json from the releases of each app, builds the Astro site in web/
+# with it, and publishes both with GitHub Pages. A new release shows in the
+# source within six hours, or at once when the workflow runs by hand.
 
 on:
   push:
@@ -35,11 +35,20 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           python3 scripts/build.py
-          mkdir -p site
-          cp apps.json site/apps.json
+          cp apps.json web/public/apps.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - name: Build the site
+        working-directory: web
+        run: |
+          npm ci
+          npx astro build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: web/dist
       - id: deploy
         uses: actions/deploy-pages@v4
