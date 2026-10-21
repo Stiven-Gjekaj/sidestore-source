@@ -24,8 +24,12 @@ https://stiven-gjekaj.github.io/sidestore-source/apps.json
 - `scripts/build.py` reads the releases of each app and writes `apps.json`.
   Each release with the IPA becomes one version. Its text comes from the
   changelog at the tag of the release.
-- The Publish workflow runs the tests, builds `apps.json`, and publishes it
-  with GitHub Pages. It runs on each push, every six hours, and by hand.
+- `web/` is an Astro site that shows each app, its versions, and buttons that
+  add the source to SideStore or AltStore. It reads `apps.json` when it builds.
+- The Publish workflow runs the tests, builds `apps.json` and the site, and
+  publishes them with GitHub Pages at
+  [stiven-gjekaj.github.io/sidestore-source](https://stiven-gjekaj.github.io/sidestore-source/).
+  It runs on each push, every six hours, and by hand.
 
 ## Add an app
 
@@ -37,6 +41,16 @@ https://stiven-gjekaj.github.io/sidestore-source/apps.json
 
 ```
 python3 -m unittest discover scripts
+```
+
+## Work on the site
+
+```
+python3 scripts/build.py
+cp apps.json web/public/apps.json
+cd web
+npm install
+npx astro dev
 ```
 
 ## License
