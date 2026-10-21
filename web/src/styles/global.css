@@ -1,0 +1,101 @@
+/* The look of ZettaStream: black and white, Karla, one corner radius. Red is only for errors. */
+@font-face {
+  font-family: "Karla";
+  src: url("../assets/Karla.ttf") format("truetype");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+:root {
+  --background: #000000;
+  --surface: #0e0e0e;
+  --surface-high: #181818;
+  --outline: #2e2e2e;
+  --accent: #ffffff;
+  --on-accent: #000000;
+  --text: #f2f2f2;
+  --text-secondary: #8c8c8c;
+  --corner: 8px;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: "Karla", system-ui, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+.page { max-width: 960px; margin: 0 auto; padding: 0 16px 64px; }
+
+header.top {
+  display: flex; align-items: center; gap: 12px;
+  padding: 20px 0; border-bottom: 1px solid var(--outline); margin-bottom: 40px;
+}
+header.top img { width: 32px; height: 32px; border-radius: var(--corner); }
+header.top a { text-decoration: none; font-weight: 700; font-size: 18px; }
+header.top nav { margin-left: auto; display: flex; gap: 20px; font-size: 15px; color: var(--text-secondary); }
+header.top nav a:hover { color: var(--text); }
+
+h1 { font-size: clamp(32px, 6vw, 48px); line-height: 1.1; margin: 0 0 12px; font-weight: 800; }
+h2 { font-size: 22px; margin: 48px 0 16px; font-weight: 700; }
+.lead { color: var(--text-secondary); font-size: 18px; max-width: 640px; margin: 0 0 28px; }
+
+.box {
+  background: var(--surface); border: 1px solid var(--outline); border-radius: var(--corner); padding: 20px;
+}
+
+.url-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: stretch; }
+.url {
+  flex: 1 1 320px; min-width: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14px;
+  background: var(--background); border: 1px solid var(--outline); border-radius: var(--corner);
+  padding: 12px 14px; overflow-x: auto; white-space: nowrap;
+}
+
+.button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font: inherit; font-weight: 700; font-size: 15px; text-decoration: none; cursor: pointer;
+  padding: 11px 18px; border-radius: var(--corner); border: 1px solid var(--outline);
+  background: var(--surface-high); color: var(--text);
+}
+.button.primary { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.button:hover { opacity: 0.85; }
+.buttons { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+
+.apps { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.app-card { display: flex; gap: 16px; text-decoration: none; }
+.app-card:hover { border-color: var(--text-secondary); }
+.app-card img, .app-head img { width: 64px; height: 64px; border-radius: 14px; flex: none; }
+.app-card h3 { margin: 0; font-size: 18px; }
+.muted { color: var(--text-secondary); font-size: 14px; }
+
+.app-head { display: flex; gap: 20px; align-items: center; margin-bottom: 20px; }
+.app-head img { width: 96px; height: 96px; border-radius: 22px; }
+.app-head h1 { margin: 0; }
+
+.facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin: 24px 0; }
+.facts div span { display: block; }
+
+.version { margin-top: 12px; }
+.version h3 { margin: 0 0 4px; font-size: 17px; }
+.version ul { margin: 12px 0 0; padding-left: 20px; }
+.version li { margin: 4px 0; }
+
+.steps { margin: 0; padding-left: 20px; }
+.steps li { margin: 8px 0; }
+
+footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--outline); color: var(--text-secondary); font-size: 14px; }
+
+/* On a phone the header keeps one line: the name stays whole, and the short links stay. */
+header.top a, header.top nav a { white-space: nowrap; }
+@media (max-width: 560px) {
+  header.top { flex-wrap: wrap; row-gap: 8px; }
+  header.top nav { gap: 14px; font-size: 14px; }
+  header.top nav .wide { display: none; }
+}

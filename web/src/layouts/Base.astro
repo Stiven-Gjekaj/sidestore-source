@@ -1,0 +1,41 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#000000" />
+    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="page">
+      <header class="top">
+        <img src={`${base}/favicon.svg`} alt="" />
+        <a href={`${base}/`}>Stiven Gjekaj Apps</a>
+        <nav>
+          <a href={`${base}/#apps`}>Apps</a>
+          <a class="wide" href={`${base}/#add`}>Add the source</a>
+          <a href="https://github.com/Stiven-Gjekaj/sidestore-source">GitHub</a>
+        </nav>
+      </header>
+      <slot />
+      <footer>
+        The apps are not in the App Store. SideStore or AltStore signs each app on your device.
+        The Karla font is under the SIL Open Font License.
+      </footer>
+    </div>
+  </body>
+</html>
