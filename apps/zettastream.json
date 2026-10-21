@@ -1,0 +1,23 @@
+{
+  "repository": "Stiven-Gjekaj/ZettaStreamIOS",
+  "asset": "ZettaStream.ipa",
+  "changelog": "CHANGELOG.md",
+  "app": {
+    "name": "ZettaStream",
+    "bundleIdentifier": "io.github.stivengjekaj.zettastream",
+    "developerName": "Stiven Gjekaj",
+    "subtitle": "Anime, movies, series, and live TV in one app.",
+    "localizedDescription": "ZettaStream shows the catalogs of your Stremio addons as rows of posters, finds the streams for a title in all your addons at the same time, and plays them. It also plays IPTV playlists as live TV, with a guide.\n\nThe app comes with no sources. You add your own list. You choose your sources, and you are responsible for them and for what you watch.",
+    "iconURL": "https://raw.githubusercontent.com/Stiven-Gjekaj/ZettaStreamIOS/main/assets/brand/icon-512.png",
+    "tintColor": "#FFFFFF",
+    "category": "entertainment",
+    "minOSVersion": "16.0",
+    "screenshots": [],
+    "appPermissions": {
+      "entitlements": [],
+      "privacy": {
+        "NSLocalNetworkUsageDescription": "ZettaStream plays torrent streams through a server on this device."
+      }
+    }
+  }
+}
