@@ -1,0 +1,46 @@
+---
+import Base from "../../layouts/Base.astro";
+import { addLink, changes, formatDate, formatSize, loadSource, slug } from "../../lib/source";
+import type { App } from "../../lib/source";
+
+export function getStaticPaths() {
+  return loadSource().apps.map((app) => ({ params: { slug: slug(app) }, props: { app } }));
+}
+
+const { app } = Astro.props as { app: App };
+const latest = app.versions[0];
+---
+
+<Base title={app.name} description={app.subtitle}>
+  <div class="app-head">
+    <img src={app.iconURL} alt="" />
+    <div>
+      <h1>{app.name}</h1>
+      <div class="muted">{app.subtitle}</div>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <a class="button primary" href={addLink("sidestore")}>Add the source to SideStore</a>
+    <a class="button" href={addLink("altstore")}>Add the source to AltStore</a>
+    <a class="button" href={latest.downloadURL}>Download the IPA</a>
+  </div>
+
+  <div class="facts">
+    <div class="box"><span class="muted">Version</span><span>{latest.version}</span></div>
+    <div class="box"><span class="muted">Released</span><span>{formatDate(latest.date)}</span></div>
+    <div class="box"><span class="muted">Size</span><span>{formatSize(latest.size)}</span></div>
+    <div class="box"><span class="muted">Needs</span><span>iOS {latest.minOSVersion} or newer</span></div>
+  </div>
+
+  {app.localizedDescription.split("\n\n").map((paragraph) => <p>{paragraph}</p>)}
+
+  <h2>Versions</h2>
+  {app.versions.map((version) => (
+    <section class="box version">
+      <h3>{version.version}</h3>
+      <div class="muted">{formatDate(version.date)}, {formatSize(version.size)}</div>
+      <ul>{changes(version.localizedDescription).map((line) => <li>{line}</li>)}</ul>
+    </section>
+  ))}
+</Base>

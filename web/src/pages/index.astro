@@ -1,0 +1,61 @@
+---
+import Base from "../layouts/Base.astro";
+import { addLink, formatDate, loadSource, slug, sourceUrl } from "../lib/source";
+
+const source = loadSource();
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<Base title={source.name + " Apps"} description={source.description}>
+  <h1>iOS apps for SideStore and AltStore</h1>
+  <p class="lead">{source.description} Add the source one time, and each app gets its updates from it.</p>
+
+  <section id="add" class="box">
+    <div class="url-row">
+      <code class="url" id="source-url">{sourceUrl}</code>
+      <button class="button" id="copy" type="button">Copy</button>
+    </div>
+    <div class="buttons">
+      <a class="button primary" href={addLink("sidestore")}>Add to SideStore</a>
+      <a class="button" href={addLink("altstore")}>Add to AltStore</a>
+    </div>
+  </section>
+
+  <h2 id="apps">Apps</h2>
+  <div class="apps">
+    {source.apps.map((app) => {
+      const latest = app.versions[0];
+      return (
+        <a class="box app-card" href={`${base}/apps/${slug(app)}/`}>
+          <img src={app.iconURL} alt="" />
+          <div>
+            <h3>{app.name}</h3>
+            <div class="muted">{app.subtitle}</div>
+            <div class="muted">Version {latest.version}, {formatDate(latest.date)}</div>
+          </div>
+        </a>
+      );
+    })}
+  </div>
+
+  <h2>How to add the source</h2>
+  <ol class="steps">
+    <li>Install <a href="https://sidestore.io">SideStore</a> or <a href="https://altstore.io">AltStore</a> on your iPhone or iPad.</li>
+    <li>Tap "Add to SideStore" or "Add to AltStore" above on the device. Or open Sources in the app, tap the plus button, and paste the address.</li>
+    <li>Open the source, choose an app, and tap Install.</li>
+  </ol>
+
+  <script>
+    const button = document.getElementById("copy");
+    const url = document.getElementById("source-url")?.textContent ?? "";
+    button?.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(url);
+        button.textContent = "Copied";
+      } catch {
+        button.textContent = "Select and copy";
+      }
+      setTimeout(() => (button.textContent = "Copy"), 2000);
+    });
+  </script>
+</Base>
