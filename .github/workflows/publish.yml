@@ -1,0 +1,45 @@
+name: Publish
+
+# Builds apps.json from the releases of each app and publishes it with GitHub
+# Pages. A new release shows in the source within six hours, or at once when
+# the workflow runs by hand.
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test the generator
+        run: python3 -m unittest discover scripts
+      - name: Build the source
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 scripts/build.py
+          mkdir -p site
+          cp apps.json site/apps.json
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deploy
+        uses: actions/deploy-pages@v4
