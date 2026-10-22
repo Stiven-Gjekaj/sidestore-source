@@ -14,6 +14,7 @@ https://stiven-gjekaj.github.io/sidestore-source/apps.json
 
 | App | Repository |
 | --- | --- |
+| Polytechnium | [Stiven-Gjekaj/polytechnium](https://github.com/Stiven-Gjekaj/polytechnium) |
 | ZettaStream | [Stiven-Gjekaj/ZettaStreamIOS](https://github.com/Stiven-Gjekaj/ZettaStreamIOS) |
 
 ## How it works
