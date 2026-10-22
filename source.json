@@ -1,8 +1,8 @@
 {
-  "name": "Stiven Gjekaj",
+  "name": "Stiven",
   "identifier": "io.github.stivengjekaj.source",
-  "subtitle": "Apps by Stiven Gjekaj",
-  "description": "The iOS apps of Stiven Gjekaj. Each app comes from its own GitHub releases.",
+  "subtitle": "Apps by Stiven",
+  "description": "The iOS apps of Stiven. Each app comes from its own GitHub releases.",
   "website": "https://github.com/Stiven-Gjekaj/sidestore-source",
   "tintColor": "#FFFFFF",
   "iconURL": "https://raw.githubusercontent.com/Stiven-Gjekaj/ZettaStreamIOS/main/assets/brand/icon-512.png",
