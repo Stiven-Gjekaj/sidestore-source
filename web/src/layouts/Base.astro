@@ -17,13 +17,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#000000" />
-    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+    <link rel="icon" type="image/png" href={`${base}/logo.png`} />
+    <link rel="apple-touch-icon" href={`${base}/logo.png`} />
     <title>{title}</title>
   </head>
   <body>
     <div class="page">
       <header class="top">
-        <img src={`${base}/favicon.svg`} alt="" />
+        <img src={`${base}/logo.png`} alt="" />
         <a href={`${base}/`}>Stiven Apps</a>
         <nav>
           <a href={`${base}/#apps`}>Apps</a>
