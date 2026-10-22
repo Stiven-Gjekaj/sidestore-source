@@ -7,14 +7,16 @@
     "bundleIdentifier": "io.github.stivengjekaj.polytechnium",
     "developerName": "Stiven Gjekaj",
     "subtitle": "Timetable, grades, exams, and deadlines at UPT.",
-    "localizedDescription": "Polytechnium is for the students of the Polytechnic University of Tirana. It reads the timetable PDF of the Faculty of Information Technology and keeps the classes of your group, such as II-A-ELN, with the room, the lecturer, and the kind of each class.\n\nThe text is in English and in Albanian. Your data stays on your device. It is not an app of the university.",
+    "localizedDescription": "Polytechnium is for the students of the Polytechnic University of Tirana. It reads the timetable PDF of the Faculty of Information Technology and keeps the classes of your group, such as II-A-ELN, with the room, the lecturer, and the kind of each class.\n\nToday and the Next class widget show your current and next class. The grade calculator gives your credit-weighted average and the points that the final needs for a grade. The exams and the deadlines have countdowns and reminders.\n\nThe text is in English and in Albanian. Your data stays on your device. It is not an app of the university.",
     "iconURL": "https://raw.githubusercontent.com/Stiven-Gjekaj/polytechnium/main/assets/brand/icon-512.png",
     "tintColor": "#FFFFFF",
     "category": "utilities",
     "minOSVersion": "17.0",
     "screenshots": [],
     "appPermissions": {
-      "entitlements": ["com.apple.security.application-groups"],
+      "entitlements": [
+        "com.apple.security.application-groups"
+      ],
       "privacy": {}
     }
   }
