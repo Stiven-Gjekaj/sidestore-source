@@ -1,6 +1,6 @@
 # SideStore source
 
-The iOS apps of Stiven Gjekaj, for SideStore and AltStore.
+The iOS apps of Stiven, for SideStore and AltStore.
 
 ## Add the source
 
