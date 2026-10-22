@@ -30,7 +30,7 @@ https://stiven-gjekaj.github.io/sidestore-source/apps.json
 - The Publish workflow runs the tests, builds `apps.json` and the site, and
   publishes them with GitHub Pages at
   [stiven-gjekaj.github.io/sidestore-source](https://stiven-gjekaj.github.io/sidestore-source/).
-  It runs on each push, every six hours, and by hand.
+  It runs on each push, every hour, and by hand.
 
 ## Add an app
 
