@@ -119,7 +119,12 @@ def build(root, get):
     for path in sorted((root / "apps").glob("*.json")):
         config = json.loads(path.read_text())
         repository = config["repository"]
-        releases = json.loads(get(f"{API}/repos/{repository}/releases?per_page=100") or "[]")
+        text = get(f"{API}/repos/{repository}/releases?per_page=100")
+        releases = json.loads(text) if text else None
+        # With no list of releases, the build stops. An empty source would remove the
+        # app from each device until the next run.
+        if not isinstance(releases, list):
+            raise SystemExit(f"GitHub gave no list of releases for {repository}")
         changelog = config.get("changelog")
 
         def changelog_at(tag, repository=repository, changelog=changelog):

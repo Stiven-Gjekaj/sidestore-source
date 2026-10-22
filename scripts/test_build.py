@@ -82,6 +82,7 @@ class BuildTests(unittest.TestCase):
             (root / "apps" / "none.json").write_text(json.dumps(other))
             answers = {
                 "https://api.github.com/repos/owner/app/releases?per_page=100": json.dumps([release("v1.0.0")]),
+                # A repository with no release yet gives an empty list.
                 "https://api.github.com/repos/owner/none/releases?per_page=100": "[]",
                 "https://raw.githubusercontent.com/owner/app/v1.0.0/CHANGELOG.md": CHANGELOG,
             }
@@ -91,6 +92,16 @@ class BuildTests(unittest.TestCase):
         self.assertNotIn("minOSVersion", source["apps"][0])
         self.assertEqual(source["apps"][0]["versions"][0]["minOSVersion"], "16.0")
         self.assertEqual(source["news"], [])
+
+    def test_no_answer_or_an_error_answer_stops_the_build(self):
+        for answer in (None, '{"message": "Not Found"}'):
+            with tempfile.TemporaryDirectory() as folder:
+                root = Path(folder)
+                (root / "apps").mkdir()
+                (root / "source.json").write_text(json.dumps({"name": "Source"}))
+                (root / "apps" / "app.json").write_text(json.dumps(CONFIG))
+                with self.assertRaises(SystemExit):
+                    build.build(root, lambda url, answer=answer: answer)
 
 
 if __name__ == "__main__":
