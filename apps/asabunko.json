@@ -7,7 +7,7 @@
     "bundleIdentifier": "io.github.stivengjekaj.asabunko",
     "developerName": "Stiven",
     "subtitle": "A calm reader for manga, comics, and light novels.",
-    "localizedDescription": "Asabunko reads manga, comics, and light novels with a warm dark look and a paper look. Import CBZ, CBR, CB7, and CBT files, archives, and folders of images from Files. Read from the right to the left, from the left to the right, or in one vertical column, and continue where you stopped.\n\nThe next versions add EPUB and PDF, OPDS servers, and the source lists of LNReader, Aidoku, Paperback, and Suwayomi. The app comes with no sources. You add your own lists, and you are responsible for them.\n\nYour books stay on your device.",
+    "localizedDescription": "Asabunko reads manga, comics, light novels, and web novels, with a warm dark look and a paper look.\n\nImport CBZ, CBR, CB7, and CBT comics, EPUB, TXT, and FB2 novels, and PDFs from Files. Read from the right to the left, from the left to the right, or in one vertical column, and continue where you stopped.\n\nPaste your sources, one URL on each line: OPDS catalogs such as Komga and Kavita, LNReader plugins, Suwayomi servers, Aidoku sources, and Paperback extensions. The app comes with no sources. You choose your sources, and you are responsible for them.\n\nBack up your library in one file. Your books stay on your device.",
     "iconURL": "https://raw.githubusercontent.com/Stiven-Gjekaj/Asabunko/main/assets/brand/icon-512.png",
     "tintColor": "#E34659",
     "category": "entertainment",
