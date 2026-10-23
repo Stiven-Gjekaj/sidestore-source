@@ -11,7 +11,7 @@
     "iconURL": "https://raw.githubusercontent.com/Stiven-Gjekaj/Asabunko/main/assets/brand/icon-512.png",
     "tintColor": "#E34659",
     "category": "entertainment",
-    "minOSVersion": "17.0",
+    "minOSVersion": "18.0",
     "screenshots": [],
     "appPermissions": {
       "entitlements": [],
