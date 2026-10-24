@@ -1,0 +1,23 @@
+{
+  "repository": "Stiven-Gjekaj/fernstone",
+  "asset": "Fernstone.ipa",
+  "changelog": "CHANGELOG.md",
+  "app": {
+    "name": "Fernstone",
+    "bundleIdentifier": "io.github.stivengjekaj.fernstone",
+    "developerName": "Stiven",
+    "subtitle": "A native client for Minecraft Alpha and Beta multiplayer.",
+    "localizedDescription": "Fernstone joins Minecraft Alpha and Beta servers, up to b1.7.3, such as Project Poseidon in offline mode. It is native code with ANGLE on Metal, so it runs in LiveContainer with no JIT.\n\nImport your own client jar of the version that you play. The app reads terrain.png and the other textures from it. The app comes with no file of Mojang.\n\nIt is not an official product of Mojang or Microsoft.",
+    "iconURL": "https://raw.githubusercontent.com/Stiven-Gjekaj/fernstone/main/assets/brand/icon-512.png",
+    "tintColor": "#5C9A3A",
+    "category": "games",
+    "minOSVersion": "15.0",
+    "screenshots": [],
+    "appPermissions": {
+      "entitlements": [],
+      "privacy": {
+        "NSLocalNetworkUsageDescription": "Fernstone connects to a Minecraft server on your local network."
+      }
+    }
+  }
+}
