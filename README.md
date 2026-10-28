@@ -16,6 +16,7 @@ https://stiven-gjekaj.github.io/sidestore-source/apps.json
 | --- | --- |
 | Asabunko | [Stiven-Gjekaj/Asabunko](https://github.com/Stiven-Gjekaj/Asabunko) |
 | Polytechnium | [Stiven-Gjekaj/polytechnium](https://github.com/Stiven-Gjekaj/polytechnium) |
+| Star Soccer Rebooted | [Stiven-Gjekaj/StarSoccerRebooted](https://github.com/Stiven-Gjekaj/StarSoccerRebooted) |
 | ZettaStream | [Stiven-Gjekaj/ZettaStreamIOS](https://github.com/Stiven-Gjekaj/ZettaStreamIOS) |
 
 ## How it works
