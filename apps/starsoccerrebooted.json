@@ -1,0 +1,21 @@
+{
+  "repository": "Stiven-Gjekaj/StarSoccerRebooted",
+  "asset": "StarSoccerRebooted.ipa",
+  "changelog": "CHANGELOG.md",
+  "app": {
+    "name": "Star Soccer Rebooted",
+    "bundleIdentifier": "io.github.stivengjekaj.starsoccerrebooted",
+    "developerName": "Stiven",
+    "subtitle": "A remake of New Star Soccer 4.32 with a living world.",
+    "localizedDescription": "Star Soccer Rebooted is a remake of New Star Soccer 4.32. It has the full career: the trials, the matches and the chances, the training of the skills, the league and the cups, the life of the player, the casino and the races, and the retirement.\n\nThe remake adds a living world. Other players and managers have careers, the news tells their stories, and the honours keep the records. Choose a position, play a custom career, and install data packs with real squads and crests.\n\nThe app comes with no file of New Star Soccer. Put the APK, the XAPK, or the IPA of your own copy of the game in the folder of the app in Files, and the app imports its assets.\n\nIt is a fan project. It is not from New Star Games.",
+    "iconURL": "https://raw.githubusercontent.com/Stiven-Gjekaj/StarSoccerRebooted/main/assets/icon.png",
+    "tintColor": "#2FA84F",
+    "category": "games",
+    "minOSVersion": "15.0",
+    "screenshots": [],
+    "appPermissions": {
+      "entitlements": [],
+      "privacy": {}
+    }
+  }
+}
