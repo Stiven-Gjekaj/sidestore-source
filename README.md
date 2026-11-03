@@ -15,6 +15,7 @@ https://stiven-gjekaj.github.io/sidestore-source/apps.json
 | App | Repository |
 | --- | --- |
 | Asabunko | [Stiven-Gjekaj/Asabunko](https://github.com/Stiven-Gjekaj/Asabunko) |
+| DLGE Player | [Stiven-Gjekaj/DLGEPlayer](https://github.com/Stiven-Gjekaj/DLGEPlayer) |
 | Polytechnium | [Stiven-Gjekaj/polytechnium](https://github.com/Stiven-Gjekaj/polytechnium) |
 | Star Soccer Rebooted | [Stiven-Gjekaj/StarSoccerRebooted](https://github.com/Stiven-Gjekaj/StarSoccerRebooted) |
 | ZettaStream | [Stiven-Gjekaj/ZettaStreamIOS](https://github.com/Stiven-Gjekaj/ZettaStreamIOS) |
