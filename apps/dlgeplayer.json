@@ -1,0 +1,25 @@
+{
+  "repository": "Stiven-Gjekaj/DLGEPlayer",
+  "asset": "DLGE-Player.ipa",
+  "changelog": "CHANGELOG.md",
+  "app": {
+    "name": "DLGE Player",
+    "bundleIdentifier": "io.github.stiven-gjekaj.dlgeplayer",
+    "developerName": "Stiven",
+    "subtitle": "A player for Diabolik Lovers Grand Edition.",
+    "localizedDescription": "DLGE Player plays Diabolik Lovers Grand Edition, the Switch release of 2019. It plays both games of the edition: Haunted Dark Bridal and MORE,BLOOD. It shows the text, the sprites, the backgrounds, and the event images, and it plays the music, the voices, and the movies. It has 60 save slots for each game, a backlog with voices, auto and skip modes, a gallery, and a music room. The English patch of the community comes with the app.\n\nThe app comes with no file of the game. Put the NSP file of your own copy and the prod.keys file of your console in the folder of the app in Files. The app imports the game one time.\n\nIt is a fan project. It is not from Idea Factory, Otomate, or Rejet.",
+    "iconURL": "https://raw.githubusercontent.com/Stiven-Gjekaj/DLGEPlayer/main/godot/icon.png",
+    "tintColor": "#8B1A2B",
+    "category": "games",
+    "minOSVersion": "15.0",
+    "screenshots": [],
+    "appPermissions": {
+      "entitlements": [],
+      "privacy": {
+        "NSCameraUsageDescription": "The game engine of the app declares this permission. The app does not use the camera.",
+        "NSMicrophoneUsageDescription": "The game engine of the app declares this permission. The app does not use the microphone.",
+        "NSPhotoLibraryUsageDescription": "The game engine of the app declares this permission. The app does not use the photo library."
+      }
+    }
+  }
+}
